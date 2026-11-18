@@ -1,0 +1,32 @@
+export const initialPosts = [
+  {
+    id: 'post-1',
+    author: 'Amina M.',
+    initials: 'AM',
+    role: 'Community builder',
+    content: 'We wrapped up our first neighborhood clean-up this morning. Twelve people showed up, the sun came out, and the park already feels a little more like ours. Thank you to everyone who joined! 🌱',
+    createdAt: '2026-11-18T07:30:00.000Z',
+    likes: 18,
+    comments: 4,
+  },
+  {
+    id: 'post-2',
+    author: 'Jonah K.',
+    initials: 'JK',
+    role: 'Learning together',
+    content: 'Small reminder for anyone learning something new: you do not have to have it all figured out to take the next step. Progress counts, even when it is quiet.',
+    createdAt: '2026-11-18T05:10:00.000Z',
+    likes: 12,
+    comments: 2,
+  },
+  {
+    id: 'post-3',
+    author: 'Lena W.',
+    initials: 'LW',
+    role: 'Neighborhood member',
+    content: 'Does anyone have a favorite local spot for a relaxed Saturday coffee? Looking for somewhere new to try with a friend ☕',
+    createdAt: '2026-11-17T15:45:00.000Z',
+    likes: 7,
+    comments: 6,
+  },
+]
