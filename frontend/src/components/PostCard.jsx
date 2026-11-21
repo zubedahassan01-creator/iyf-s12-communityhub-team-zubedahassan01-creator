@@ -1,15 +1,15 @@
-import { formatRelativeTime } from '../utils/formatRelativeTime.js'
+import { Link } from 'react-router-dom';
+import styles from './PostCard.module.css';
 
-function PostCard({ post }) {
-  return (
-    <article className="post-card">
-      <div className="post-heading"><span className={`avatar avatar-${post.initials.toLowerCase()}`}>{post.initials}</span><div className="post-author"><h2>{post.author}</h2><p>{post.role} <span aria-hidden="true">·</span> <time dateTime={post.createdAt}>{formatRelativeTime(post.createdAt)}</time></p></div><button type="button" className="more-button" aria-label={`More options for ${post.author}'s post`}>···</button></div>
-      <p className="post-content">{post.content}</p>
-      <div className="post-reactions"><span><span aria-hidden="true">♡</span> {post.likes} appreciations</span><span>{post.comments} comments</span></div>
-      <div className="post-divider" />
-      <div className="post-actions"><button type="button"><span aria-hidden="true">♡</span> Appreciate</button><button type="button"><span aria-hidden="true">▱</span> Comment</button><button type="button"><span aria-hidden="true">↗</span> Share</button></div>
-    </article>
-  )
+export default function PostCard({ post, liked, onToggleLike }) {
+  const excerpt = post.body.length > 150 ? `${post.body.slice(0, 150).trim()}…` : post.body;
+  return <article className={styles.card}>
+    <div className={styles.meta}><span>COMMUNITY STORY</span><span>Story #{post.id}</span></div>
+    <h2 className={styles.title}><Link to={`/posts/${post.id}`}>{post.title}</Link></h2>
+    <p className={styles.excerpt}>{excerpt}</p>
+    <div className={styles.actions}>
+      <Link className={styles.readLink} to={`/posts/${post.id}`}>Read story <span aria-hidden="true">→</span></Link>
+      <button type="button" className={`${styles.like} ${liked ? styles.liked : ''}`} aria-pressed={liked} aria-label={`${liked ? 'Unlike' : 'Like'} ${post.title}`} onClick={() => onToggleLike(post.id)}><span aria-hidden="true">{liked ? '♥' : '♡'}</span> {liked ? 'Liked' : 'Like'}</button>
+    </div>
+  </article>;
 }
-
-export default PostCard
