@@ -4,7 +4,18 @@ CommunityHub is a team-built community feed. This repository is intended to be t
 
 ## Frontend
 
-The React frontend lives in `frontend/`. It uses Vite, React function components, and `useState` for the post feed and composer. The initial data is local sample state; persistence, authentication, and backend integration are planned for later weeks.
+The React frontend lives in `frontend/`. It uses Vite, React function components, and React Router. Week 9 adds Home, Stories, Story Detail, Create Story, and About routes; JSONPlaceholder data fetching; local posts and likes; search; custom hooks; and responsive CSS Modules.
+
+### Accessibility audit — Week 9
+
+Run Chrome Lighthouse → Accessibility on the same route and viewport for both measurements. Record the actual scores after the pre-fix and post-fix runs:
+
+| Run | Accessibility score | Findings / changes |
+|---|---:|---|
+| Before fixes | Pending measurement | Run Lighthouse against the Week 8 frontend before applying the Week 9 accessibility fixes. |
+| After fixes | Pending measurement | Re-run Lighthouse against the updated frontend and record the score and fixes. |
+
+The Week 9 interface includes a skip link, semantic landmarks, visible focus styles, labelled inputs, descriptive link/button names, and live loading/error announcements.
 
 ### Run locally
 
